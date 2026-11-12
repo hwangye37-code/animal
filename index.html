@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f4e9"><meta name="description" content="나만의 속도로 산책하고 꾸미는 작은 3D 마을, 초록섬."><title>초록섬 · 오늘도 느긋하게</title></head>
+<body>
+  <div id="scene" aria-label="초록섬 3D 마을"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="초록섬 처음으로"><span class="brand-icon">❋</span><span>초록섬<small>CHOROK ISLAND</small></span></a>
+    <div class="weather"><span class="sun">☀</span><span>맑음 · 포근한 오후<small>마음이 쉬어 가는 작은 섬</small></span></div>
+    <div class="top-actions"><span class="save-status" id="save-status">● 자동 저장 준비</span><button id="help" class="icon-button" aria-label="조작 방법">?</button></div>
+  </header>
+  <aside class="intro"><span class="eyebrow">YOUR LITTLE GETAWAY</span><h1>오늘은,<br>조금 느긋하게.</h1><p>길을 걷고, 이웃을 만나고.<br>우리의 작은 마을을 가꿔 보세요.</p><div class="island-tag"><i></i> 나의 첫 번째 섬</div></aside>
+  <aside class="quest card"><div class="quest-title"><span>✉</span><span>오늘의 작은 기쁨<small>급하지 않게, 하나씩</small></span></div><div class="quest-row"><span>🍎 사과 모으기</span><b id="fruit-count">0 / 12</b></div><div class="progress"><i id="fruit-progress"></i></div><div class="quest-row"><span>♡ 이웃에게 인사하기</span><b id="greet-count">0 / 3</b></div><p id="quest-note">작은 만남이 마을을 따뜻하게 해요.</p></aside>
+  <div id="prompt" class="prompt" hidden><kbd>E</kbd><span></span></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <footer class="bottom-bar"><div class="movement"><span class="keys">W A S D</span><span>이동 <em>또는 방향키</em></span><span class="divider"></span><kbd>E</kbd><span>대화 · 수집</span></div><div class="tools"><button id="zoom-out" class="icon-button" aria-label="축소">−</button><button id="zoom-in" class="icon-button" aria-label="확대">＋</button><button id="decorate" class="primary"><span>✿</span> 마을 꾸미기</button></div></footer>
+  <section id="build-panel" class="build-panel card" hidden><div class="panel-heading"><div><strong>나만의 작은 풍경</strong><p>물건을 고르고 잔디 위를 눌러요.</p></div><button id="close-build" class="icon-button" aria-label="꾸미기 닫기">×</button></div><div class="build-options"><button data-type="tree" class="selected"><span>🌳</span>나무</button><button data-type="house"><span>🏡</span>작은 집</button></div><p class="build-hint">초록색이면 배치할 수 있어요 · Esc 닫기</p><div class="panel-bottom"><span id="object-count">0 / 40개</span><button id="undo">마지막 배치 취소</button></div></section>
+  <section id="dialogue" class="dialogue card" role="dialog" aria-label="주민과 대화" hidden><span id="npc-name" class="npc-name"></span><p id="npc-line"></p><button id="next-line">계속 이야기하기 <span>↵</span></button><button id="close-dialogue" class="dialogue-close" aria-label="대화 닫기">×</button></section>
+  <div id="help-overlay" class="overlay" hidden><section class="help-card card" role="dialog" aria-modal="true" aria-labelledby="help-title"><span class="eyebrow">WELCOME TO CHOROK</span><h2 id="help-title">초록섬에 오신 걸 환영해요.</h2><p>이곳에서는 서두르지 않아도 괜찮아요.</p><ul><li><b>WASD / 방향키</b><span>마을을 자유롭게 걸어요</span></li><li><b>E / 화면의 상호작용 버튼</b><span>가까운 주민과 대화하거나 사과를 주워요</span></li><li><b>마을 꾸미기</b><span>빈 잔디에 나무와 집을 놓아요</span></li><li><b>＋ / − / 마우스 휠</b><span>마을을 가까이 또는 멀리 봐요</span></li></ul><p class="help-note">이 마을은 혼자 즐기는 공간이에요. 수집과 꾸미기는 현재 브라우저에 저장돼요. 모바일에서는 왼쪽 아래 방향 버튼을 이용해요.</p><button id="close-help" class="primary">산책 시작하기 →</button><button id="reset" class="reset-button">마을 처음부터 시작하기</button></section></div>
+  <div class="touch-controls" aria-label="터치 이동"><button data-key="arrowup" aria-label="앞으로">↑</button><button data-key="arrowleft" aria-label="왼쪽">←</button><button data-key="arrowdown" aria-label="뒤로">↓</button><button data-key="arrowright" aria-label="오른쪽">→</button></div>
+  <button id="interact-touch" class="touch-interact" hidden>이야기 / 줍기</button>
+  <script type="module" src="/src/main.js"></script>
+</body></html>
